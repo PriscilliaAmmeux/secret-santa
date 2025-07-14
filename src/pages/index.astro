@@ -1,11 +1,138 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <div class="hero-section">
+    <h1>🎅 Père Noël Secret</h1>
+    <p class="subtitle">Organisez facilement vos échanges de cadeaux de Noël !</p>
+    
+    <div class="features">
+      <div class="feature">
+        <h3>📝 Créez votre groupe</h3>
+        <p>Organisez un échange de cadeaux avec vos amis, famille ou collègues</p>
+      </div>
+      <div class="feature">
+        <h3>🎲 Tirage automatique</h3>
+        <p>Notre système effectue le tirage au sort de manière équitable</p>
+      </div>
+      <div class="feature">
+        <h3>🎁 Liste de souhaits</h3>
+        <p>Partagez vos idées cadeaux pour aider votre Père Noël secret</p>
+      </div>
+    </div>
+
+    <div class="auth-section">
+      <h2>Connectez-vous pour commencer</h2>
+      <p>Vous devez vous connecter pour accéder à l'application</p>
+      
+      <div class="auth-buttons">
+        <button class="btn btn-primary" id="loginBtn">
+          Se connecter
+        </button>
+        <button class="btn btn-secondary" id="registerBtn">
+          Créer un compte
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .hero-section {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #d42c2c;
+      margin-bottom: 1rem;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 3rem;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .feature {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .feature h3 {
+      color: #2c7a2c;
+      margin-bottom: 1rem;
+    }
+
+    .auth-section {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      border: 2px solid #d42c2c;
+    }
+
+    .auth-section h2 {
+      color: #d42c2c;
+      margin-bottom: 1rem;
+    }
+
+    .auth-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: #d42c2c;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #b52424;
+    }
+
+    .btn-secondary {
+      background: #2c7a2c;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: #246624;
+    }
+  </style>
+
+  <script>
+    document.getElementById('loginBtn')?.addEventListener('click', () => {
+      // Rediriger vers la page de connexion
+      window.location.href = '/login';
+    });
+
+    document.getElementById('registerBtn')?.addEventListener('click', () => {
+      // Rediriger vers la page d'inscription
+      window.location.href = '/register';
+    });
+  </script>
 </Layout>
